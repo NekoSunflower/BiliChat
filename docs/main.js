@@ -90,6 +90,9 @@ var AlphaComponent = /** @class */ (function () {
         this.translate.get('ROOM').subscribe(function (value) {
             _this.title.setTitle(value + ' ' + _this.currentRoomId);
         });
+        if (this.route.snapshot.queryParamMap.has('zoom')) {
+            document.getElementById("app").style.zoom = parseFloat(this.route.snapshot.queryParamMap.get('zoom')) * 100 + "%";
+        }
         if (this.route.snapshot.queryParamMap.has('loadAvatar')) {
             this.proc.loadAvatar = this.route.snapshot.queryParamMap.get('loadAvatar').toLowerCase() === 'true';
         }
