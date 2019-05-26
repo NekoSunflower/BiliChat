@@ -29,11 +29,13 @@ export class AlphaComponent implements OnInit {
     private translate: TranslateService) { }
 
   ngOnInit() {
-    this.currentRoomId = this.route.snapshot.params['id'];
+    this.currentRoomId = Number(this.route.snapshot.queryParamMap.get('id'));
     this.translate.get('ROOM').subscribe((value) => {
       this.title.setTitle(value + ' ' + this.currentRoomId);
     });
-
+    if (this.route.snapshot.queryParamMap.has('zoom')) {
+      document.getElementById("app").style.zoom = parseFloat(this.route.snapshot.queryParamMap.get('zoom')) * 100 + "%";
+    }
     if (this.route.snapshot.queryParamMap.has('loadAvatar')) {
       this.proc.loadAvatar = this.route.snapshot.queryParamMap.get('loadAvatar').toLowerCase() === 'true';
     }

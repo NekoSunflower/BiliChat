@@ -750,8 +750,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-
 
 
 
@@ -775,14 +773,14 @@ var AppComponent = /** @class */ (function () {
         }
     };
     AppComponent.prototype.getLang = function () {
-        var lang;
-        if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["isPlatformBrowser"])(this.platformId)) {
-            lang = this.translate.getBrowserLang();
-        }
-        else {
-            lang = navigator.language.substring(0, 2); // 暂不考虑区域代码
-        }
-        return lang;
+        // let lang: string;
+        // if (isPlatformBrowser(this.platformId)) {
+        //   lang = this.translate.getBrowserLang();
+        // } else {
+        //   lang = navigator.language.substring(0, 2); // 暂不考虑区域代码
+        // }
+        // return lang;
+        return defaultLang;
     };
     AppComponent.prototype.switchLanguage = function (lang) {
         this.translate.use(lang);

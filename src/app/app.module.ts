@@ -29,7 +29,7 @@ export function HttpLoaderFactory(http: HttpClient, state: TransferState) {
         });
       } else {
         // 使用网络请求获取语言包资源
-        return new TranslateHttpLoader(http).getTranslation(lang);
+        return new TranslateHttpLoader(http, 'assets/i18n/', '.json').getTranslation(lang);
       }
     }
   } as TranslateLoader;
