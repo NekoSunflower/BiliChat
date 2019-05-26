@@ -281,17 +281,22 @@ var ChatRendererComponent = /** @class */ (function () {
     ChatRendererComponent.prototype.onFrame = function () {
         while (this.waitForRendering.length > 0) {
             this.danmakuList.push(this.waitForRendering.shift());
-            while (this.danmakuList.length > 100) { //最大渲染数量100
+            while (this.danmakuList.length > this.maxDammakuNum) {
                 this.danmakuList.shift();
             }
         }
-        window.scrollTo(0, document.body.scrollHeight);
         setTimeout(this.onFrame.bind(this), 1000);
     };
     ChatRendererComponent.prototype.ngOnInit = function () {
         if (!Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["isPlatformBrowser"])(this.plat)) {
             return;
         }
+        requestAnimationFrame(this.awake.bind(this));
+    };
+    ChatRendererComponent.prototype.awake = function () {
+        this.onawake.emit();
+        this.lastRenderInvoke = Date.now();
+        this.lastRenderPush = Date.now();
         requestAnimationFrame(this.onFrame.bind(this));
     };
     ChatRendererComponent.prototype.sendSystemInfo = function (msg, force) {
