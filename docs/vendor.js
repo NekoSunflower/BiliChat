@@ -69560,49 +69560,6 @@ var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('7.2.15'
 
 /***/ }),
 
-/***/ "./node_modules/@nguniversal/express-engine/fesm5/tokens.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@nguniversal/express-engine/fesm5/tokens.js ***!
-  \******************************************************************/
-/*! exports provided: REQUEST, RESPONSE */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REQUEST", function() { return REQUEST; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESPONSE", function() { return RESPONSE; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var REQUEST = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('REQUEST');
-var RESPONSE = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('RESPONSE');
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
-//# sourceMappingURL=tokens.js.map
-
-
-/***/ }),
-
 /***/ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js ***!

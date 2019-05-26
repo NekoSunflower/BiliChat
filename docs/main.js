@@ -751,8 +751,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm5/ngx-translate-core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _nguniversal_express_engine_tokens__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @nguniversal/express-engine/tokens */ "./node_modules/@nguniversal/express-engine/fesm5/tokens.js");
-
 
 
 
@@ -760,10 +758,9 @@ __webpack_require__.r(__webpack_exports__);
 var langs = ['en', 'zh', 'ja'];
 var defaultLang = 'zh';
 var AppComponent = /** @class */ (function () {
-    function AppComponent(translate, platformId, request) {
+    function AppComponent(translate, platformId) {
         this.translate = translate;
         this.platformId = platformId;
-        this.request = request;
         this.title = 'bilichat';
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -783,7 +780,7 @@ var AppComponent = /** @class */ (function () {
             lang = this.translate.getBrowserLang();
         }
         else {
-            lang = (this.request.headers['accept-language'] || '').substring(0, 2); // 暂不考虑区域代码
+            lang = navigator.language.substring(0, 2); // 暂不考虑区域代码
         }
         return lang;
     };
@@ -797,11 +794,8 @@ var AppComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"])),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Optional"])()),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_nguniversal_express_engine_tokens__WEBPACK_IMPORTED_MODULE_4__["REQUEST"])),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_2__["TranslateService"],
-            Object,
-            Request])
+            Object])
     ], AppComponent);
     return AppComponent;
 }());
