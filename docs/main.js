@@ -870,7 +870,7 @@ function HttpLoaderFactory(http, state) {
             }
             else {
                 // 使用网络请求获取语言包资源
-                return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_4__["TranslateHttpLoader"](http).getTranslation(lang);
+                return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_4__["TranslateHttpLoader"](http, 'assets/i18n/', '.json').getTranslation(lang);
             }
         }
     };
