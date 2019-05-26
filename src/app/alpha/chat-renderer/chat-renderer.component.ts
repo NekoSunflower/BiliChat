@@ -33,39 +33,21 @@ export class ChatRendererComponent implements OnInit {
     this.onawake = new EventEmitter();
   }
 
-  private lastRenderInvoke: number;
-  private lastRenderPush: number;
-
   onFrame() {
-    if (Date.now() - this.lastRenderInvoke > 1000) {// 窗口不在active状态时，此方法不会被调用。
-      this.waitForRendering = [];
-      // this.sendSystemInfo('窗口已恢复激活');
-    }
-    this.lastRenderInvoke = Date.now();
-    if (this.waitForRendering.length > 0) {
-      if (Date.now() - this.lastRenderPush >= (1000.0 / this.waitForRendering.length)) {
-        this.lastRenderPush = Date.now();
-        while (this.danmakuList.length > this.maxDammakuNum) {
-          this.danmakuList.shift();
-        }
-        this.danmakuList.push(this.waitForRendering.shift());
+    while (this.waitForRendering.length > 0) {
+      this.danmakuList.push(this.waitForRendering.shift());
+      while (this.danmakuList.length > 100) {//最大渲染数量100
+        this.danmakuList.shift();
       }
     }
-    requestAnimationFrame(this.onFrame.bind(this));
+    window.scrollTo(0, document.body.scrollHeight);
+    setTimeout(this.onFrame.bind(this), 1000);
   }
 
   ngOnInit() {
     if (!isPlatformBrowser(this.plat)) {
       return;
     }
-    requestAnimationFrame(this.awake.bind(this));
-  }
-
-  awake() {
-    this.onawake.emit();
-
-    this.lastRenderInvoke = Date.now();
-    this.lastRenderPush = Date.now();
     requestAnimationFrame(this.onFrame.bind(this));
   }
 
