@@ -86,7 +86,7 @@ var AlphaComponent = /** @class */ (function () {
     }
     AlphaComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.currentRoomId = this.route.snapshot.params['id'];
+        this.currentRoomId = Number(this.route.snapshot.queryParamMap.get('id'));
         this.translate.get('ROOM').subscribe(function (value) {
             _this.title.setTitle(value + ' ' + _this.currentRoomId);
         });
@@ -683,10 +683,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _alpha_alpha_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./alpha/alpha.component */ "./src/app/alpha/alpha.component.ts");
 /* harmony import */ var _index_index_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index/index.component */ "./src/app/index/index.component.ts");
 /* harmony import */ var _viewer_viewer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./viewer/viewer.component */ "./src/app/viewer/viewer.component.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _index_local_index_local_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./index-local/index-local.component */ "./src/app/index-local/index-local.component.ts");
-
-
 
 
 
@@ -697,7 +693,7 @@ var routes = [
     { path: 'alpha/:id', component: _alpha_alpha_component__WEBPACK_IMPORTED_MODULE_3__["AlphaComponent"] },
     { path: 'viewer/:id', component: _viewer_viewer_component__WEBPACK_IMPORTED_MODULE_5__["ViewerComponent"] },
     { path: 'official', component: _index_index_component__WEBPACK_IMPORTED_MODULE_4__["IndexComponent"] },
-    { path: '', component: _environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].official ? _index_index_component__WEBPACK_IMPORTED_MODULE_4__["IndexComponent"] : _index_local_index_local_component__WEBPACK_IMPORTED_MODULE_7__["IndexLocalComponent"] },
+    { path: '', component: _alpha_alpha_component__WEBPACK_IMPORTED_MODULE_3__["AlphaComponent"] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppRoutingModule = /** @class */ (function () {
