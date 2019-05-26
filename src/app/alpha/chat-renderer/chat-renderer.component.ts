@@ -33,14 +33,16 @@ export class ChatRendererComponent implements OnInit {
     this.onawake = new EventEmitter();
   }
 
+  private lastRenderInvoke: number;
+  private lastRenderPush: number;
+
   onFrame() {
     while (this.waitForRendering.length > 0) {
       this.danmakuList.push(this.waitForRendering.shift());
-      while (this.danmakuList.length > 100) {//最大渲染数量100
+      while (this.danmakuList.length > this.maxDammakuNum) {
         this.danmakuList.shift();
       }
     }
-    window.scrollTo(0, document.body.scrollHeight);
     setTimeout(this.onFrame.bind(this), 1000);
   }
 
@@ -48,6 +50,14 @@ export class ChatRendererComponent implements OnInit {
     if (!isPlatformBrowser(this.plat)) {
       return;
     }
+    requestAnimationFrame(this.awake.bind(this));
+  }
+
+  awake() {
+    this.onawake.emit();
+
+    this.lastRenderInvoke = Date.now();
+    this.lastRenderPush = Date.now();
     requestAnimationFrame(this.onFrame.bind(this));
   }
 
