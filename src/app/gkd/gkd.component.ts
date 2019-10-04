@@ -18,7 +18,6 @@ import { GKDRendererComponent } from './gkd-renderer/gkd-renderer.component';
 export class GKDComponent {
 
   currentRoomId: number;
-  zoomStyle = "scale(1)";
 
   @ViewChild('renderer', { static: true })
   private renderer: GKDRendererComponent;
@@ -38,7 +37,7 @@ export class GKDComponent {
       this.title.setTitle(value.replace('{roomId}', this.currentRoomId));
     });
     if (this.route.snapshot.queryParamMap.has('zoom')) {
-      this.zoomStyle = "scale(" + this.route.snapshot.queryParamMap.get('zoom') + ")";
+      document.getElementById("app").style.zoom = parseFloat(this.route.snapshot.queryParamMap.get('zoom')) * 100 + "%";
     }
     if (this.route.snapshot.queryParamMap.has('loadAvatar')) {
       this.proc.loadAvatar = this.route.snapshot.queryParamMap.get('loadAvatar').toLowerCase() === 'true';
