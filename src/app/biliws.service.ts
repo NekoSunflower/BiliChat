@@ -3,6 +3,29 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MessageProcessorService } from './message-processor.service';
 import { IMessage, ConnectedMessage } from './danmaku.def';
+import { inflate } from 'pako';
+
+const bufferDecoder = (buffer: ArrayBuffer): Array<Object> => {
+  const arr = new Uint8Array(buffer);
+  const view = new DataView(arr.buffer);
+  const packs = [];
+  let offset = 0;
+  while (offset < arr.byteLength) {
+    const protocol = view.getInt16(6 + offset);
+    const type = view.getInt32(8 + offset);
+    if (type === 5) {
+      const section = arr.slice(offset + view.getInt16(4 + offset), view.getInt32(offset) + offset);
+      if (protocol === 0) {
+        packs.push(JSON.parse(new TextDecoder().decode(section)));
+      }
+      if (protocol === 2) {
+        packs.push(...bufferDecoder(inflate(section)));
+      }
+    }
+    offset += view.getInt32(offset);
+  }
+  return packs;
+};
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +63,7 @@ export class BiliwsService {
           const obj = {
             uid: 0,
             roomid: Number(roomid),
-            protover: 1,
+            protover: 2,
             platform: 'web',
             clientver: '1.5.15'
           };
@@ -52,18 +75,8 @@ export class BiliwsService {
           let data = e.data;
           var reader = new FileReader();
           reader.onload = function (e) {
-            let arr = new Uint8Array(<ArrayBuffer>reader.result);
-            let view = new DataView(arr.buffer);
-            let offset = 0;
-            while (offset < arr.byteLength) {
-              let type = view.getInt32(8 + offset);
-              let section = arr.slice(offset + view.getInt16(4 + offset), view.getInt32(offset) + offset);
-              offset += view.getInt32(offset);
-              //后面不要操作offset了
-              if (type == 5) {
-                that.proc.formMessage(JSON.parse(new TextDecoder().decode(section)), observer);
-              }
-            }
+            const packs = bufferDecoder(<ArrayBuffer>reader.result);
+            packs.forEach(section => that.proc.formMessage(section, observer));
           };
           reader.readAsArrayBuffer(data);
         };

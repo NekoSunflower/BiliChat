@@ -4,6 +4,7 @@ import { Observable, race, timer, fromEvent, Subscriber, of } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,8 @@ export class MessageProcessorService {
 
   loadAvatar = true;
 
+  showJapanese = false;
+
   wordFilter: Array<string> = [
     'kimo', '风暴',
     '弹幕姬', '弹幕机',
@@ -42,22 +45,71 @@ export class MessageProcessorService {
   customEmotions: Array<any> = [];
 
   customGiftLevel: Array<any> = [
-    { value: 1245, color: '#e62117' },
-    { value: 450, color: '#c2185b' },
-    { value: 300, color: '#e65110' },
-    { value: 100, color: '#ffca28' },
-    { value: 50, color: '#00bfa5' },
-    { value: 0, color: '#00b8d4' }
+    {
+      value: 1245, color: {
+        color_header: 'rgba(255,255,255,1)',
+        color_primary: 'rgba(230,33,23,1)',
+        color_secondary: 'rgba(208,0,0,1)',
+        color_message: 'rgba(255,255,255,1)',
+        color_author_name: 'rgba(255,255,255,0.701961)'
+      }
+    },
+    {
+      value: 450, color: {
+        color_header: 'rgba(255,255,255,1)',
+        color_primary: 'rgba(233,30,99,1)',
+        color_secondary: 'rgba(194,24,91,1)',
+        color_message: 'rgba(255,255,255,1)',
+        color_author_name: 'rgba(255,255,255,0.701961)'
+      }
+    },
+    {
+      value: 300, color: {
+        color_header: 'rgba(255,255,255,0.87451)',
+        color_primary: 'rgba(245,124,0,1)',
+        color_secondary: 'rgba(230,81,0,1)',
+        color_message: 'rgba(255,255,255,0.87451)',
+        color_author_name: 'rgba(255,255,255,0.701961)'
+      }
+    },
+    {
+      value: 100, color: {
+        color_header: 'rgba(0,0,0,0.87451)',
+        color_primary: 'rgba(255,202,40,1)',
+        color_secondary: 'rgba(255,179,0,1)',
+        color_message: 'rgba(0,0,0,0.87451)',
+        color_author_name: 'rgba(0,0,0,0.541176)'
+      }
+    },
+    {
+      value: 50, color: {
+        color_header: 'rgba(0,0,0,1)',
+        color_primary: 'rgba(29,233,182,1)',
+        color_secondary: 'rgba(0,191,165,1)',
+        color_message: 'rgba(0,0,0,1)',
+        color_author_name: 'rgba(0,0,0,0.541176)'
+      }
+    },
+    {
+      value: 0, color: {
+        color_header: 'rgba(0,0,0,1)',
+        color_primary: 'rgba(0,229,255,1)',
+        color_secondary: 'rgba(0,184,212,1)',
+        color_message: 'rgba(0,0,0,1)',
+        color_author_name: 'rgba(0,0,0,0.701961)'
+      }
+    }
   ];
 
   silverGiftRatio = 0;
 
   pure = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private translate: TranslateService) { }
 
   formMessage(rawData: any, observer: Subscriber<IMessage>) {
-    if (rawData.cmd === 'DANMU_MSG') {
+    if (rawData.cmd.startsWith('DANMU_MSG')) {
       if (this.blackList.indexOf(rawData.info[2][0]) !== -1) {
         return; // blackList
       }
@@ -125,6 +177,20 @@ export class MessageProcessorService {
           ));
         }
       );
+    } else if (rawData.cmd === 'SUPER_CHAT_MESSAGE_JPN') {
+      let msg = new GiftMessage(
+        rawData.data.uid,
+        rawData.data.user_info.uname,
+        undefined,
+        0,
+        rawData.data.price,
+        0,
+        this.getGiftColor(rawData.data.price),
+        rawData.data.user_info.face,
+        true
+      );
+      msg.paid_message = this.showJapanese ? rawData.data.message_jpn : rawData.data.message;
+      observer.next(msg);
     }
   }
 
@@ -170,11 +236,11 @@ export class MessageProcessorService {
     // i18n
     switch (level) {
       case 1:
-        return '总督';
+        return this.translate.instant('MEMBER_TYPE_1'); // 总督
       case 2:
-        return '提督';
+        return this.translate.instant('MEMBER_TYPE_2'); // 提督
       case 3:
-        return '舰长';
+        return this.translate.instant('MEMBER_TYPE_3'); // 舰长
       default:
         return null;
     }
@@ -188,13 +254,25 @@ export class MessageProcessorService {
     return ele.source;
   }
 
-  getGiftColor(value: number) {
+  getGiftColor(value: number): {
+    color_header: string,
+    color_primary: string,
+    color_secondary: string,
+    color_message: string,
+    color_author_name: string
+  } {
     for (const s of this.customGiftLevel) {
       if (value >= s.value) {
         return s.color;
       }
     }
-    return '#00b8d4'; // const min value color
+    return {
+      color_header: 'rgba(0,0,0,1)',
+      color_primary: 'rgba(0,229,255,1)',
+      color_secondary: 'rgba(0,184,212,1)',
+      color_message: 'rgba(0,0,0,1)',
+      color_author_name: 'rgba(0,0,0,0.701961)'
+    }; // const min value color
   }
 }
 

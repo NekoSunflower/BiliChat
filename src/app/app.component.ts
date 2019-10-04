@@ -29,17 +29,37 @@ export class AppComponent implements OnInit {
   }
 
   public getLang(): string {
-    // let lang: string;
-    // if (isPlatformBrowser(this.platformId)) {
-    //   lang = this.translate.getBrowserLang();
-    // } else {
-    //   lang = navigator.language.substring(0, 2); // 暂不考虑区域代码
-    // }
-    // return lang;
-    return defaultLang;
+    let lang: string;
+    lang = this.getDefaultLang();
+    return lang;
   }
 
   public switchLanguage(lang: string): void {
     this.translate.use(lang);
+  }
+
+  public getCookie(key: string): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return null;
+    } else {
+      return null;
+    }
+  }
+
+  public getQuery(key: string): string {
+    if (isPlatformBrowser(this.platformId)) {
+      return null;
+    } else {
+      return null;
+    }
+  }
+
+  public getDefaultLang(): string {
+    return defaultLang;
+    // if (isPlatformBrowser(this.platformId)) {
+    //   return this.translate.getBrowserLang();
+    // } else {
+    //   return (this.request.headers['accept-language'] || '').substring(0, 2); // 暂不考虑区域代码
+    // }
   }
 }
