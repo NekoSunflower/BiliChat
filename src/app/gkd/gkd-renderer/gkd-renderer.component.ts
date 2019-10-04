@@ -62,10 +62,10 @@ export class GKDRendererComponent {
     const interval: number = now - lastFrame;
     this.animationSumup += interval;
 
-    if (interval > 1000) {// 窗口不在active状态时，此方法不会被调用。
-      this.waitForRendering = [];
-      // this.sendSystemInfo('窗口已恢复激活');
-    }
+    // if (interval > 1000) {// 窗口不在active状态时，此方法不会被调用。
+    //   this.waitForRendering = [];
+    //   // this.sendSystemInfo('窗口已恢复激活');
+    // }
 
     //pipe 0
     if (this.animating) {
@@ -109,8 +109,7 @@ export class GKDRendererComponent {
     }
 
     ttw -= interval;
-
-    requestAnimationFrame(this.onFrame.bind(this, now, ttw));
+    setTimeout(this.onFrame.bind(this, now, ttw), 1000);
   }
 
   public sendSystemInfo(msg: string) {

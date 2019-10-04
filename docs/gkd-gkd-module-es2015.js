@@ -40,7 +40,7 @@ module.exports = "<div id=\"items\" class=\"style-scope yt-live-chat-item-list-r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<yt-live-chat-renderer [displayMode]=3 (onawake)=\"onload()\" #renderer></yt-live-chat-renderer>"
+module.exports = "<yt-live-chat-renderer [displayMode]=3 (onawake)=\"onload()\" [style.transform]=\"zoomStyle\" style=\"transform-origin: left bottom;\" #renderer></yt-live-chat-renderer>"
 
 /***/ }),
 
@@ -318,10 +318,10 @@ let GKDRendererComponent = class GKDRendererComponent {
         const now = window.performance.now();
         const interval = now - lastFrame;
         this.animationSumup += interval;
-        if (interval > 1000) { // 窗口不在active状态时，此方法不会被调用。
-            this.waitForRendering = [];
-            // this.sendSystemInfo('窗口已恢复激活');
-        }
+        // if (interval > 1000) {// 窗口不在active状态时，此方法不会被调用。
+        //   this.waitForRendering = [];
+        //   // this.sendSystemInfo('窗口已恢复激活');
+        // }
         //pipe 0
         if (this.animating) {
             let remain = this.timeFunction(this.animationHeight, this.animationSumup); //px
@@ -359,7 +359,7 @@ let GKDRendererComponent = class GKDRendererComponent {
             this.shadowMessage = this.waitForRendering.shift();
         }
         ttw -= interval;
-        requestAnimationFrame(this.onFrame.bind(this, now, ttw));
+        setTimeout(this.onFrame.bind(this, now, ttw), 1000);
     }
     sendSystemInfo(msg) {
         this.sendDanmaku(new _danmaku_def__WEBPACK_IMPORTED_MODULE_2__["DanmakuMessage"](-1, 'BILICHAT', msg, 0, true, undefined, 'assets/logo_icon.png'));
@@ -569,6 +569,7 @@ let GKDComponent = class GKDComponent {
         this.bili = bili;
         this.http = http;
         this.translate = translate;
+        this.zoomStyle = "scale(1)";
         this.lastMessage = {};
     }
     ngAfterViewInit() {
@@ -577,7 +578,7 @@ let GKDComponent = class GKDComponent {
             this.title.setTitle(value.replace('{roomId}', this.currentRoomId));
         });
         if (this.route.snapshot.queryParamMap.has('zoom')) {
-            document.getElementById("app").style.zoom = parseFloat(this.route.snapshot.queryParamMap.get('zoom')) * 100 + "%";
+            this.zoomStyle = "scale(" + this.route.snapshot.queryParamMap.get('zoom') + ")";
         }
         if (this.route.snapshot.queryParamMap.has('loadAvatar')) {
             this.proc.loadAvatar = this.route.snapshot.queryParamMap.get('loadAvatar').toLowerCase() === 'true';
