@@ -7,6 +7,9 @@
     align-self: center;
     white-space: normal;
     min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 #emotion.yt-live-chat-text-message-renderer{
