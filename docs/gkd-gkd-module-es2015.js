@@ -332,7 +332,7 @@ let GKDRendererComponent = class GKDRendererComponent {
             this.renderer2.setStyle(this.items.nativeElement, 'transform', `translateY(${remain}px)`);
         }
         //pipe 1
-        if (!this.animating && ttw <= 0 && this.shadowMessage != null) {
+        if (!this.animating && ttw <= 0) {
             //render it
             const height = this.shadowItem.nativeElement.offsetHeight - 2;
             this.animationHeight = height;

@@ -78,7 +78,7 @@ export class GKDRendererComponent {
     }
 
     //pipe 1
-    if (!this.animating && ttw <= 0 && this.shadowMessage != null) {
+    if (!this.animating && ttw <= 0) {
       //render it
 
       const height: number = this.shadowItem.nativeElement.offsetHeight - 2;
@@ -87,8 +87,9 @@ export class GKDRendererComponent {
       while (this.danmakuList.length > this.maxDammakuNum) {
         this.danmakuList.shift();
       }
-      this.danmakuList.push(this.shadowMessage);
-      this.shadowMessage = null;
+      while (this.waitForRendering.length > 0) {
+        this.danmakuList.push(this.waitForRendering.shift());
+      }
 
       const timeR: number = height / this.baseSpeed;
       const timeL: number = 1000 / ((this.waitForRendering.length > 0) ? this.waitForRendering.length : 1);
@@ -101,11 +102,6 @@ export class GKDRendererComponent {
         this.renderer2.setStyle(this.items.nativeElement, 'transform', `translateY(0px)`);
       }
       ttw = timeL;
-    }
-
-    //pipe 2
-    if (this.shadowMessage == null && this.waitForRendering.length > 0) {
-      this.shadowMessage = this.waitForRendering.shift();
     }
 
     ttw -= interval;
