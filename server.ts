@@ -19,7 +19,7 @@ import { readFile, existsSync } from 'fs';
 const app = express();
 
 const PORT = process.env.PORT || 4000;
-const VERSION = 1023;
+const VERSION = 1032;
 const DIST_FOLDER = join(__dirname, 'browser');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
@@ -138,5 +138,5 @@ app.get('*', (req, res) => {
 // Start up the Node server
 app.listen(PORT, () => {
   console.log(`bilichat正运行在 http://localhost:${PORT}`);
-  console.log(`在浏览器或OBS浏览器源中输入URL为http://localhost:${PORT}/alpha/<你的直播间号> 即可`);
+  console.log(`在浏览器或OBS浏览器源中输入URL为http://localhost:${PORT}/gkd/<你的直播间号> 即可`);
 });
