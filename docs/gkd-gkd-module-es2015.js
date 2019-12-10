@@ -33,6 +33,28 @@ module.exports = "<div id=\"items\" class=\"style-scope yt-live-chat-item-list-r
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.html":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.html ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"items\" class=\"style-scope yt-live-chat-ticker-renderer\">\r\n    <ng-container *ngFor=\"let item of danmakuList\">\r\n        <yt-live-chat-ticker-paid-message-item-renderer *ngIf=\"item.tickerValid\" class=\"style-scope yt-live-chat-ticker-renderer\" [item]=\"item\"></yt-live-chat-ticker-paid-message-item-renderer>\r\n    </ng-container>\r\n</div>"
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.html ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div id=\"container\" dir=\"ltr\" class=\"style-scope yt-live-chat-ticker-paid-message-item-renderer\" [ngStyle]=\"progressStyle\">\r\n    <div id=\"content\" class=\"style-scope yt-live-chat-ticker-paid-message-item-renderer\" [ngStyle]=\"contentStyle\">\r\n        <yt-img-shadow id=\"author-photo\" class=\"no-transition yt-live-chat-ticker-paid-message-item-renderer\" [avatarUrl]=\"item.avatarUrl\" height=\"24\" width=\"24\"></yt-img-shadow>\r\n        <span id=\"text\" class=\"style-scope yt-live-chat-ticker-paid-message-item-renderer\">{{text}}</span>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd.component.html":
 /*!******************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/gkd/gkd.component.html ***!
@@ -40,7 +62,7 @@ module.exports = "<div id=\"items\" class=\"style-scope yt-live-chat-item-list-r
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<yt-live-chat-renderer [displayMode]=3 (onawake)=\"onload()\" #renderer></yt-live-chat-renderer>"
+module.exports = "<div id=\"ticker\" class=\"style-scope yt-live-chat-renderer\">\r\n    <yt-live-chat-ticker-renderer class=\"yt-live-chat-renderer\" #tickerRenderer></yt-live-chat-ticker-renderer>\r\n</div>\r\n<div id=\"separator\" class=\"style-scope yt-live-chat-renderer\">\r\n\r\n</div>\r\n<div id=\"chat\" class=\"style-scope yt-live-chat-renderer\">\r\n    <yt-live-chat-item-list-renderer class=\"yt-live-chat-renderer\" [displayMode]=3 (onawake)=\"onload()\" #renderer></yt-live-chat-item-list-renderer>\r\n</div>"
 
 /***/ }),
 
@@ -262,7 +284,7 @@ GKDLegacyPaidMessageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host{\r\n    /* position: relative; */\r\n    display: block;\r\n    width:100vw;\r\n    height:100vh;\r\n}\r\n\r\n.shadow{\r\n    opacity: 0;\r\n    border:solid 1px transparent;\r\n}\r\n\r\n#items {\r\n    /*min-height: 100vh;*/\r\n    position: absolute;\r\n    bottom: 0;\r\n}\r\n\r\nyt-live-chat-renderer {\r\n    font-family: 'Microsoft YaHei';\r\n    font-size: 13px;\r\n    --yt-emoji-picker-renderer-height: 30%;\r\n    --yt-button-default-text-color: var(--yt-live-chat-button-default-text-color);\r\n    --yt-button-default-background-color: var(--yt-live-chat-button-default-background-color);\r\n    --yt-button-dark-text-color: var(--yt-live-chat-button-dark-text-color);\r\n    --yt-button-dark-background-color: var(--yt-live-chat-button-dark-background-color);\r\n    --yt-button-payment-background-color: var(--yt-live-chat-sponsor-color);\r\n}\r\n\r\nyt-live-chat-paid-message-renderer {\r\n    position: relative;\r\n    display: block;\r\n    padding: 4px 24px;\r\n    font-size: 15px;\r\n    --yt-live-chat-paid-message-background-color: var(--yt-live-chat-paid-message-primary-color);\r\n    --yt-live-chat-paid-message-header-background-color: var(--yt-live-chat-paid-message-secondary-color);\r\n    --yt-live-chat-text-input-field-placeholder-color: var(--yt-live-chat-paid-message-color);\r\n    --yt-live-chat-item-timestamp-display: var(--yt-live-chat-paid-message-timestamp-display, none);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2tkL2drZC1yZW5kZXJlci9na2QtcmVuZGVyZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHdCQUF3QjtJQUN4QixjQUFjO0lBQ2QsV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxVQUFVO0lBQ1YsNEJBQTRCO0FBQ2hDOztBQUVBO0lBQ0kscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQixTQUFTO0FBQ2I7O0FBR0E7SUFDSSw4QkFBOEI7SUFDOUIsZUFBZTtJQUNmLHNDQUFzQztJQUN0Qyw2RUFBNkU7SUFDN0UseUZBQXlGO0lBQ3pGLHVFQUF1RTtJQUN2RSxtRkFBbUY7SUFDbkYsdUVBQXVFO0FBQzNFOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLDRGQUE0RjtJQUM1RixxR0FBcUc7SUFDckcseUZBQXlGO0lBQ3pGLCtGQUErRjtBQUNuRyIsImZpbGUiOiJzcmMvYXBwL2drZC9na2QtcmVuZGVyZXIvZ2tkLXJlbmRlcmVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdHtcclxuICAgIC8qIHBvc2l0aW9uOiByZWxhdGl2ZTsgKi9cclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6MTAwdnc7XHJcbiAgICBoZWlnaHQ6MTAwdmg7XHJcbn1cclxuXHJcbi5zaGFkb3d7XHJcbiAgICBvcGFjaXR5OiAwO1xyXG4gICAgYm9yZGVyOnNvbGlkIDFweCB0cmFuc3BhcmVudDtcclxufVxyXG5cclxuI2l0ZW1zIHtcclxuICAgIC8qbWluLWhlaWdodDogMTAwdmg7Ki9cclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGJvdHRvbTogMDtcclxufVxyXG5cclxuXHJcbnl0LWxpdmUtY2hhdC1yZW5kZXJlciB7XHJcbiAgICBmb250LWZhbWlseTogJ01pY3Jvc29mdCBZYUhlaSc7XHJcbiAgICBmb250LXNpemU6IDEzcHg7XHJcbiAgICAtLXl0LWVtb2ppLXBpY2tlci1yZW5kZXJlci1oZWlnaHQ6IDMwJTtcclxuICAgIC0teXQtYnV0dG9uLWRlZmF1bHQtdGV4dC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kZWZhdWx0LXRleHQtY29sb3IpO1xyXG4gICAgLS15dC1idXR0b24tZGVmYXVsdC1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS15dC1saXZlLWNoYXQtYnV0dG9uLWRlZmF1bHQtYmFja2dyb3VuZC1jb2xvcik7XHJcbiAgICAtLXl0LWJ1dHRvbi1kYXJrLXRleHQtY29sb3I6IHZhcigtLXl0LWxpdmUtY2hhdC1idXR0b24tZGFyay10ZXh0LWNvbG9yKTtcclxuICAgIC0teXQtYnV0dG9uLWRhcmstYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kYXJrLWJhY2tncm91bmQtY29sb3IpO1xyXG4gICAgLS15dC1idXR0b24tcGF5bWVudC1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS15dC1saXZlLWNoYXQtc3BvbnNvci1jb2xvcik7XHJcbn1cclxuXHJcbnl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2UtcmVuZGVyZXIge1xyXG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBwYWRkaW5nOiA0cHggMjRweDtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIC0teXQtbGl2ZS1jaGF0LXBhaWQtbWVzc2FnZS1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS15dC1saXZlLWNoYXQtcGFpZC1tZXNzYWdlLXByaW1hcnktY29sb3IpO1xyXG4gICAgLS15dC1saXZlLWNoYXQtcGFpZC1tZXNzYWdlLWhlYWRlci1iYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS15dC1saXZlLWNoYXQtcGFpZC1tZXNzYWdlLXNlY29uZGFyeS1jb2xvcik7XHJcbiAgICAtLXl0LWxpdmUtY2hhdC10ZXh0LWlucHV0LWZpZWxkLXBsYWNlaG9sZGVyLWNvbG9yOiB2YXIoLS15dC1saXZlLWNoYXQtcGFpZC1tZXNzYWdlLWNvbG9yKTtcclxuICAgIC0teXQtbGl2ZS1jaGF0LWl0ZW0tdGltZXN0YW1wLWRpc3BsYXk6IHZhcigtLXl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2UtdGltZXN0YW1wLWRpc3BsYXksIG5vbmUpO1xyXG59Il19 */"
+module.exports = "\r\nyt-live-chat-item-list-renderer {\r\n    /* position: relative; */\r\n    display: block;\r\n    overflow: hidden;\r\n    z-index: 0;\r\n}\r\n\r\nyt-live-chat-item-list-renderer.yt-live-chat-renderer, yt-live-chat-ninja-message-renderer.yt-live-chat-renderer {\r\n    flex: 1;\r\n    flex-basis: 0.000000001px;\r\n}\r\n\r\n.shadow{\r\n    opacity: 0;\r\n    border:solid 1px transparent;\r\n}\r\n\r\n#items.yt-live-chat-renderer {\r\n    /*min-height: 100vh;*/\r\n    position: absolute;\r\n    bottom: 0;\r\n}\r\n\r\nyt-live-chat-paid-message-renderer {\r\n    position: relative;\r\n    display: block;\r\n    padding: 4px 24px;\r\n    font-size: 15px;\r\n    --yt-live-chat-paid-message-background-color: var(--yt-live-chat-paid-message-primary-color);\r\n    --yt-live-chat-paid-message-header-background-color: var(--yt-live-chat-paid-message-secondary-color);\r\n    --yt-live-chat-text-input-field-placeholder-color: var(--yt-live-chat-paid-message-color);\r\n    --yt-live-chat-item-timestamp-display: var(--yt-live-chat-paid-message-timestamp-display, none);\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2tkL2drZC1yZW5kZXJlci9na2QtcmVuZGVyZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQ0E7SUFDSSx3QkFBd0I7SUFDeEIsY0FBYztJQUNkLGdCQUFnQjtJQUNoQixVQUFVO0FBQ2Q7O0FBRUE7SUFHSSxPQUFPO0lBRVAseUJBQXlCO0FBQzdCOztBQUVBO0lBQ0ksVUFBVTtJQUNWLDRCQUE0QjtBQUNoQzs7QUFFQTtJQUNJLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsU0FBUztBQUNiOztBQUdBO0lBQ0ksa0JBQWtCO0lBQ2xCLGNBQWM7SUFDZCxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLDRGQUE0RjtJQUM1RixxR0FBcUc7SUFDckcseUZBQXlGO0lBQ3pGLCtGQUErRjtBQUNuRyIsImZpbGUiOiJzcmMvYXBwL2drZC9na2QtcmVuZGVyZXIvZ2tkLXJlbmRlcmVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxueXQtbGl2ZS1jaGF0LWl0ZW0tbGlzdC1yZW5kZXJlciB7XHJcbiAgICAvKiBwb3NpdGlvbjogcmVsYXRpdmU7ICovXHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICB6LWluZGV4OiAwO1xyXG59XHJcblxyXG55dC1saXZlLWNoYXQtaXRlbS1saXN0LXJlbmRlcmVyLnl0LWxpdmUtY2hhdC1yZW5kZXJlciwgeXQtbGl2ZS1jaGF0LW5pbmphLW1lc3NhZ2UtcmVuZGVyZXIueXQtbGl2ZS1jaGF0LXJlbmRlcmVyIHtcclxuICAgIC1tcy1mbGV4OiAxIDEgMC4wMDAwMDAwMDFweDtcclxuICAgIC13ZWJraXQtZmxleDogMTtcclxuICAgIGZsZXg6IDE7XHJcbiAgICAtd2Via2l0LWZsZXgtYmFzaXM6IDAuMDAwMDAwMDAxcHg7XHJcbiAgICBmbGV4LWJhc2lzOiAwLjAwMDAwMDAwMXB4O1xyXG59XHJcblxyXG4uc2hhZG93e1xyXG4gICAgb3BhY2l0eTogMDtcclxuICAgIGJvcmRlcjpzb2xpZCAxcHggdHJhbnNwYXJlbnQ7XHJcbn1cclxuXHJcbiNpdGVtcy55dC1saXZlLWNoYXQtcmVuZGVyZXIge1xyXG4gICAgLyptaW4taGVpZ2h0OiAxMDB2aDsqL1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgYm90dG9tOiAwO1xyXG59XHJcblxyXG5cclxueXQtbGl2ZS1jaGF0LXBhaWQtbWVzc2FnZS1yZW5kZXJlciB7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHBhZGRpbmc6IDRweCAyNHB4O1xyXG4gICAgZm9udC1zaXplOiAxNXB4O1xyXG4gICAgLS15dC1saXZlLWNoYXQtcGFpZC1tZXNzYWdlLWJhY2tncm91bmQtY29sb3I6IHZhcigtLXl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2UtcHJpbWFyeS1jb2xvcik7XHJcbiAgICAtLXl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2UtaGVhZGVyLWJhY2tncm91bmQtY29sb3I6IHZhcigtLXl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2Utc2Vjb25kYXJ5LWNvbG9yKTtcclxuICAgIC0teXQtbGl2ZS1jaGF0LXRleHQtaW5wdXQtZmllbGQtcGxhY2Vob2xkZXItY29sb3I6IHZhcigtLXl0LWxpdmUtY2hhdC1wYWlkLW1lc3NhZ2UtY29sb3IpO1xyXG4gICAgLS15dC1saXZlLWNoYXQtaXRlbS10aW1lc3RhbXAtZGlzcGxheTogdmFyKC0teXQtbGl2ZS1jaGF0LXBhaWQtbWVzc2FnZS10aW1lc3RhbXAtZGlzcGxheSwgbm9uZSk7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -304,7 +326,10 @@ let GKDRendererComponent = class GKDRendererComponent {
     }
     ngOnInit() {
         if (Object(_angular_common__WEBPACK_IMPORTED_MODULE_3__["isPlatformBrowser"])(this.plat)) {
-            requestAnimationFrame(this.awake.bind(this));
+            requestAnimationFrame(() => {
+                //empty frame
+                requestAnimationFrame(this.awake.bind(this));
+            });
         }
     }
     timeFunction(total, sumup) {
@@ -418,8 +443,9 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 ], GKDRendererComponent.prototype, "groupSimilarWindow", void 0);
 GKDRendererComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'yt-live-chat-renderer',
+        selector: 'yt-live-chat-item-list-renderer',
         template: __webpack_require__(/*! raw-loader!./gkd-renderer.component.html */ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd-renderer/gkd-renderer.component.html"),
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
         styles: [__webpack_require__(/*! ./gkd-renderer.component.css */ "./src/app/gkd/gkd-renderer/gkd-renderer.component.css")]
     }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_core__WEBPACK_IMPORTED_MODULE_1__["PLATFORM_ID"])),
@@ -517,6 +543,173 @@ GkdRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.css":
+/*!***************************************************************************!*\
+  !*** ./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.css ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "yt-live-chat-ticker-renderer {\r\n  display: block;\r\n  /*background-color: var(--yt-live-chat-header-background-color);*/\r\n}\r\n\r\n#items.yt-live-chat-ticker-renderer {\r\n  height: 32px;\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  padding: 0 24px 8px 24px;\r\n}\r\n\r\n#items.yt-live-chat-ticker-renderer > *.yt-live-chat-ticker-renderer {\r\n    margin-right: 8px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2tkL2drZC10aWNrZXItcmVuZGVyZXIvZ2tkLXRpY2tlci1yZW5kZXJlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztFQUNkLGlFQUFpRTtBQUNuRTs7QUFFQTtFQUNFLFlBQVk7RUFDWixnQkFBZ0I7RUFDaEIsbUJBQW1CO0VBQ25CLHdCQUF3QjtBQUMxQjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL2drZC9na2QtdGlja2VyLXJlbmRlcmVyL2drZC10aWNrZXItcmVuZGVyZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInl0LWxpdmUtY2hhdC10aWNrZXItcmVuZGVyZXIge1xyXG4gIGRpc3BsYXk6IGJsb2NrO1xyXG4gIC8qYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWhlYWRlci1iYWNrZ3JvdW5kLWNvbG9yKTsqL1xyXG59XHJcblxyXG4jaXRlbXMueXQtbGl2ZS1jaGF0LXRpY2tlci1yZW5kZXJlciB7XHJcbiAgaGVpZ2h0OiAzMnB4O1xyXG4gIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcclxuICBwYWRkaW5nOiAwIDI0cHggOHB4IDI0cHg7XHJcbn1cclxuXHJcbiNpdGVtcy55dC1saXZlLWNoYXQtdGlja2VyLXJlbmRlcmVyID4gKi55dC1saXZlLWNoYXQtdGlja2VyLXJlbmRlcmVyIHtcclxuICAgIG1hcmdpbi1yaWdodDogOHB4O1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.ts":
+/*!**************************************************************************!*\
+  !*** ./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.ts ***!
+  \**************************************************************************/
+/*! exports provided: GkdTickerRendererComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GkdTickerRendererComponent", function() { return GkdTickerRendererComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let GkdTickerRendererComponent = class GkdTickerRendererComponent {
+    constructor() {
+        this.danmakuList = [];
+    }
+    appendGift(gift) {
+        this.danmakuList = this.danmakuList.filter(x => {
+            return x.tickerValid;
+        });
+        this.danmakuList.unshift(gift);
+    }
+};
+GkdTickerRendererComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'yt-live-chat-ticker-renderer',
+        template: __webpack_require__(/*! raw-loader!./gkd-ticker-renderer.component.html */ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.html"),
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+        styles: [__webpack_require__(/*! ./gkd-ticker-renderer.component.css */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], GkdTickerRendererComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.module.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.module.ts ***!
+  \***********************************************************************/
+/*! exports provided: GkdTickerRendererModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GkdTickerRendererModule", function() { return GkdTickerRendererModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _gkd_ticker_renderer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gkd-ticker-renderer.component */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.ts");
+/* harmony import */ var _gkd_ticker_gkd_ticker_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gkd-ticker/gkd-ticker.component */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.ts");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/shared.module */ "./src/app/shared/shared.module.ts");
+
+
+
+
+
+
+let GkdTickerRendererModule = class GkdTickerRendererModule {
+};
+GkdTickerRendererModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_gkd_ticker_renderer_component__WEBPACK_IMPORTED_MODULE_3__["GkdTickerRendererComponent"], _gkd_ticker_gkd_ticker_component__WEBPACK_IMPORTED_MODULE_4__["GkdTickerComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"]
+        ],
+        exports: [_gkd_ticker_renderer_component__WEBPACK_IMPORTED_MODULE_3__["GkdTickerRendererComponent"]]
+    })
+], GkdTickerRendererModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "yt-live-chat-ticker-paid-message-item-renderer {\r\n  display: inline-block;\r\n  font-size: 14px;\r\n  outline: none;\r\n  transition: width 0.2s;\r\n  vertical-align: top;\r\n  cursor: pointer;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n  -webkit-user-select: none;\r\n  user-select: none;\r\n}\r\n\r\n#container.yt-live-chat-ticker-paid-message-item-renderer {\r\n    border-radius: 999px;\r\n    padding: 4px;\r\n}\r\n\r\n#content.yt-live-chat-ticker-paid-message-item-renderer {\r\n    height: 24px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\nyt-img-shadow.yt-live-chat-ticker-paid-message-item-renderer {\r\n    margin-right: -4px;\r\n    overflow: hidden;\r\n    border-radius: 50%;\r\n}\r\n\r\n#text.yt-live-chat-ticker-paid-message-item-renderer {\r\n    margin: 0 8px;\r\n    font-weight: 500;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2tkL2drZC10aWNrZXItcmVuZGVyZXIvZ2tkLXRpY2tlci9na2QtdGlja2VyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxxQkFBcUI7RUFDckIsZUFBZTtFQUNmLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsbUJBQW1CO0VBQ25CLGVBQWU7RUFDZixzQkFBc0I7RUFDdEIscUJBQXFCO0VBQ3JCLHlCQUF5QjtFQUN6QixpQkFBaUI7QUFDbkI7O0FBRUE7SUFDSSxvQkFBb0I7SUFDcEIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixhQUFhO0lBR2IsbUJBQW1CO0lBR25CLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixnQkFBZ0I7SUFDaEIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2drZC9na2QtdGlja2VyLXJlbmRlcmVyL2drZC10aWNrZXIvZ2tkLXRpY2tlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsieXQtbGl2ZS1jaGF0LXRpY2tlci1wYWlkLW1lc3NhZ2UtaXRlbS1yZW5kZXJlciB7XHJcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gIGZvbnQtc2l6ZTogMTRweDtcclxuICBvdXRsaW5lOiBub25lO1xyXG4gIHRyYW5zaXRpb246IHdpZHRoIDAuMnM7XHJcbiAgdmVydGljYWwtYWxpZ246IHRvcDtcclxuICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgLW1vei11c2VyLXNlbGVjdDogbm9uZTtcclxuICAtbXMtdXNlci1zZWxlY3Q6IG5vbmU7XHJcbiAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTtcclxuICB1c2VyLXNlbGVjdDogbm9uZTtcclxufVxyXG5cclxuI2NvbnRhaW5lci55dC1saXZlLWNoYXQtdGlja2VyLXBhaWQtbWVzc2FnZS1pdGVtLXJlbmRlcmVyIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDk5OXB4O1xyXG4gICAgcGFkZGluZzogNHB4O1xyXG59XHJcblxyXG4jY29udGVudC55dC1saXZlLWNoYXQtdGlja2VyLXBhaWQtbWVzc2FnZS1pdGVtLXJlbmRlcmVyIHtcclxuICAgIGhlaWdodDogMjRweDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAtbXMtZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIC13ZWJraXQtZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgIGZsZXgtZGlyZWN0aW9uOiByb3c7XHJcbiAgICAtbXMtZmxleC1hbGlnbjogY2VudGVyO1xyXG4gICAgLXdlYmtpdC1hbGlnbi1pdGVtczogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxueXQtaW1nLXNoYWRvdy55dC1saXZlLWNoYXQtdGlja2VyLXBhaWQtbWVzc2FnZS1pdGVtLXJlbmRlcmVyIHtcclxuICAgIG1hcmdpbi1yaWdodDogLTRweDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbn1cclxuXHJcbiN0ZXh0Lnl0LWxpdmUtY2hhdC10aWNrZXItcGFpZC1tZXNzYWdlLWl0ZW0tcmVuZGVyZXIge1xyXG4gICAgbWFyZ2luOiAwIDhweDtcclxuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbn0iXX0= */"
+
+/***/ }),
+
+/***/ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: GkdTickerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GkdTickerComponent", function() { return GkdTickerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _danmaku_def__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../danmaku.def */ "./src/app/danmaku.def.ts");
+
+
+
+let GkdTickerComponent = class GkdTickerComponent {
+    constructor() {
+        this.valid = true;
+    }
+    get progress() {
+        if (Date.now() > this.item.tickerExpire) {
+            this.valid = false;
+            return 0;
+        }
+        return (Date.now() - this.item.tickerStart) / (this.item.tickerTime);
+    }
+    get progressStyle() {
+        return {
+            'background': `linear-gradient(90deg, ${this.item.color_theme.color_secondary},${this.item.color_theme.color_secondary} ${this.progress * 100 + '%'},${this.item.color_theme.color_primary} ${this.progress * 100 + '%'},${this.item.color_theme.color_primary})`
+        };
+    }
+    get contentStyle() {
+        return {
+            'color': this.item.color_theme.color_header
+        };
+    }
+    get text() {
+        if (this.item.superchat) {
+            return `CN¥${this.item.value}`;
+        }
+        else if (this.item.guard_type > 0) {
+            return this.item.gift;
+        }
+        else {
+            return `${this.item.gift} ×${this.item.amount}`;
+        }
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _danmaku_def__WEBPACK_IMPORTED_MODULE_2__["GiftMessage"])
+], GkdTickerComponent.prototype, "item", void 0);
+GkdTickerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'yt-live-chat-ticker-paid-message-item-renderer',
+        template: __webpack_require__(/*! raw-loader!./gkd-ticker.component.html */ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.html"),
+        encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
+        styles: [__webpack_require__(/*! ./gkd-ticker.component.css */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker/gkd-ticker.component.css")]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], GkdTickerComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/gkd/gkd.component.css":
 /*!***************************************!*\
   !*** ./src/app/gkd/gkd.component.css ***!
@@ -524,7 +717,7 @@ GkdRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2drZC9na2QuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "yt-live-chat-renderer {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex: 1;\r\n  flex-basis: 0.000000001px;\r\n\r\n  /* ADDED */\r\n  height: 100vh;\r\n}\r\n\r\nyt-live-chat-renderer {\r\n  font-size: 13px;\r\n  --yt-emoji-picker-renderer-height: 180px;\r\n  --yt-button-default-text-color: var(--yt-live-chat-button-default-text-color);\r\n  --yt-button-default-background-color: var(--yt-live-chat-button-default-background-color);\r\n  --yt-button-dark-text-color: var(--yt-live-chat-button-dark-text-color);\r\n  --yt-button-dark-background-color: var(--yt-live-chat-button-dark-background-color);\r\n  --yt-button-payment-background-color: var(--yt-live-chat-sponsor-color);\r\n}\r\n\r\n#ticker.yt-live-chat-renderer {\r\n  z-index: 1;\r\n}\r\n\r\n#separator.yt-live-chat-renderer {\r\n  border-bottom: var(--yt-live-chat-header-bottom-border, none);\r\n}\r\n\r\n#chat.yt-live-chat-renderer {\r\n  overflow: hidden;\r\n  position: relative;\r\n  display: flex;\r\n  /*-ms-flex-direction: column;\r\n  -webkit-flex-direction: column;\r\n  flex-direction: column;*/\r\n  flex: 1;\r\n  flex-basis: 0.000000001px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZ2tkL2drZC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsYUFBYTtFQUdiLHNCQUFzQjtFQUd0QixPQUFPO0VBRVAseUJBQXlCOztFQUV6QixVQUFVO0VBQ1YsYUFBYTtBQUNmOztBQUVBO0VBQ0UsZUFBZTtFQUNmLHdDQUF3QztFQUN4Qyw2RUFBNkU7RUFDN0UseUZBQXlGO0VBQ3pGLHVFQUF1RTtFQUN2RSxtRkFBbUY7RUFDbkYsdUVBQXVFO0FBQ3pFOztBQUVBO0VBQ0UsVUFBVTtBQUNaOztBQUVBO0VBQ0UsNkRBQTZEO0FBQy9EOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixhQUFhO0VBQ2I7OzBCQUV3QjtFQUN4QixPQUFPO0VBQ1AseUJBQXlCO0FBQzNCIiwiZmlsZSI6InNyYy9hcHAvZ2tkL2drZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsieXQtbGl2ZS1jaGF0LXJlbmRlcmVyIHtcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIC1tcy1mbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIC13ZWJraXQtZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIC1tcy1mbGV4OiAxIDEgMC4wMDAwMDAwMDFweDtcclxuICAtd2Via2l0LWZsZXg6IDE7XHJcbiAgZmxleDogMTtcclxuICAtd2Via2l0LWZsZXgtYmFzaXM6IDAuMDAwMDAwMDAxcHg7XHJcbiAgZmxleC1iYXNpczogMC4wMDAwMDAwMDFweDtcclxuXHJcbiAgLyogQURERUQgKi9cclxuICBoZWlnaHQ6IDEwMHZoO1xyXG59XHJcblxyXG55dC1saXZlLWNoYXQtcmVuZGVyZXIge1xyXG4gIGZvbnQtc2l6ZTogMTNweDtcclxuICAtLXl0LWVtb2ppLXBpY2tlci1yZW5kZXJlci1oZWlnaHQ6IDE4MHB4O1xyXG4gIC0teXQtYnV0dG9uLWRlZmF1bHQtdGV4dC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kZWZhdWx0LXRleHQtY29sb3IpO1xyXG4gIC0teXQtYnV0dG9uLWRlZmF1bHQtYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kZWZhdWx0LWJhY2tncm91bmQtY29sb3IpO1xyXG4gIC0teXQtYnV0dG9uLWRhcmstdGV4dC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kYXJrLXRleHQtY29sb3IpO1xyXG4gIC0teXQtYnV0dG9uLWRhcmstYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LWJ1dHRvbi1kYXJrLWJhY2tncm91bmQtY29sb3IpO1xyXG4gIC0teXQtYnV0dG9uLXBheW1lbnQtYmFja2dyb3VuZC1jb2xvcjogdmFyKC0teXQtbGl2ZS1jaGF0LXNwb25zb3ItY29sb3IpO1xyXG59XHJcblxyXG4jdGlja2VyLnl0LWxpdmUtY2hhdC1yZW5kZXJlciB7XHJcbiAgei1pbmRleDogMTtcclxufVxyXG5cclxuI3NlcGFyYXRvci55dC1saXZlLWNoYXQtcmVuZGVyZXIge1xyXG4gIGJvcmRlci1ib3R0b206IHZhcigtLXl0LWxpdmUtY2hhdC1oZWFkZXItYm90dG9tLWJvcmRlciwgbm9uZSk7XHJcbn1cclxuXHJcbiNjaGF0Lnl0LWxpdmUtY2hhdC1yZW5kZXJlciB7XHJcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICAvKi1tcy1mbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gIC13ZWJraXQtZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyovXHJcbiAgZmxleDogMTtcclxuICBmbGV4LWJhc2lzOiAwLjAwMDAwMDAwMXB4O1xyXG59XHJcbiJdfQ== */"
 
 /***/ }),
 
@@ -548,6 +741,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 /* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/fesm2015/ngx-translate-core.js");
 /* harmony import */ var _gkd_renderer_gkd_renderer_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./gkd-renderer/gkd-renderer.component */ "./src/app/gkd/gkd-renderer/gkd-renderer.component.ts");
+/* harmony import */ var _gkd_ticker_renderer_gkd_ticker_renderer_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./gkd-ticker-renderer/gkd-ticker-renderer.component */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.component.ts");
+
 
 
 
@@ -682,6 +877,7 @@ let GKDComponent = class GKDComponent {
                     this.lastMessage[message.uid] = null;
                 }
                 this.renderer.sendDanmaku(message);
+                this.tickerRenderer.appendGift(message);
             }
         }, e => {
             if (e.target.readyState === WebSocket.CLOSED) {
@@ -710,9 +906,13 @@ tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('renderer', { static: true }),
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _gkd_renderer_gkd_renderer_component__WEBPACK_IMPORTED_MODULE_9__["GKDRendererComponent"])
 ], GKDComponent.prototype, "renderer", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('tickerRenderer', { static: true }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _gkd_ticker_renderer_gkd_ticker_renderer_component__WEBPACK_IMPORTED_MODULE_10__["GkdTickerRendererComponent"])
+], GKDComponent.prototype, "tickerRenderer", void 0);
 GKDComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-gkd',
+        selector: 'yt-live-chat-renderer',
         template: __webpack_require__(/*! raw-loader!./gkd.component.html */ "./node_modules/raw-loader/index.js!./src/app/gkd/gkd.component.html"),
         encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
         styles: [__webpack_require__(/*! ./gkd.component.css */ "./src/app/gkd/gkd.component.css")]
@@ -746,6 +946,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gkd_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gkd.component */ "./src/app/gkd/gkd.component.ts");
 /* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/shared.module */ "./src/app/shared/shared.module.ts");
 /* harmony import */ var _gkd_renderer_gkd_renderer_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./gkd-renderer/gkd-renderer.module */ "./src/app/gkd/gkd-renderer/gkd-renderer.module.ts");
+/* harmony import */ var _gkd_ticker_renderer_gkd_ticker_renderer_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./gkd-ticker-renderer/gkd-ticker-renderer.module */ "./src/app/gkd/gkd-ticker-renderer/gkd-ticker-renderer.module.ts");
+
 
 
 
@@ -764,7 +966,8 @@ GkdModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _shared_shared_module__WEBPACK_IMPORTED_MODULE_5__["SharedModule"],
             _gkd_routing_module__WEBPACK_IMPORTED_MODULE_3__["GkdRoutingModule"],
-            _gkd_renderer_gkd_renderer_module__WEBPACK_IMPORTED_MODULE_6__["GkdRendererModule"]
+            _gkd_renderer_gkd_renderer_module__WEBPACK_IMPORTED_MODULE_6__["GkdRendererModule"],
+            _gkd_ticker_renderer_gkd_ticker_renderer_module__WEBPACK_IMPORTED_MODULE_7__["GkdTickerRendererModule"]
         ]
     })
 ], GkdModule);

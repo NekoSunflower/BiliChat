@@ -311,6 +311,32 @@ class GiftMessage {
         this.type = type;
         this.mode = mode;
         this.paid_message = paid_message;
+        this.tickerStart = Date.now();
+        this.tickerTime = this.getTickerTime(this.value) * 1000;
+        this.tickerExpire = Date.now() + this.tickerTime;
+    }
+    get tickerValid() {
+        return Date.now() < this.tickerExpire;
+    }
+    getTickerTime(value) {
+        if (value < 30) {
+            return 60;
+        }
+        else if (value < 50) {
+            return 120;
+        }
+        else if (value < 100) {
+            return 5 * 60;
+        }
+        else if (value < 500) {
+            return 30 * 60;
+        }
+        else if (value < 1000) {
+            return 60 * 60;
+        }
+        else {
+            return 120 * 60;
+        }
     }
 }
 GiftMessage.ctorParameters = () => [
