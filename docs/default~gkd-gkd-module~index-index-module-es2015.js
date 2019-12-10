@@ -7045,7 +7045,7 @@ let BiliwsService = class BiliwsService {
         this._ownerId = v;
     }
     connect(roomid) {
-        this.ws = new WebSocket('wss://tx-tokyo-live-comet-01.chat.bilibili.com/sub');
+        this.ws = new WebSocket('wss://broadcastlv.chat.bilibili.com/sub');
         this.ws.binaryType = "blob";
         return new rxjs__WEBPACK_IMPORTED_MODULE_2__["Observable"](observer => {
             let that = this;
