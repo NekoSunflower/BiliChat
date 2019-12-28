@@ -40,4 +40,5 @@ yt-live-chat-renderer {
   flex-direction: column;*/
   flex: 1;
   flex-basis: 0.000000001px;
+  height: 100%;
 }
