@@ -10,7 +10,7 @@ yt-live-chat-renderer {
   flex-basis: 0.000000001px;
 
   /* ADDED */
-  height: 100vh;
+  height: 100%;
 }
 
 yt-live-chat-renderer {
